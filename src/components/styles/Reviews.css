@@ -1,0 +1,36 @@
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+  filter: invert(100%);
+}
+
+.Reviews {
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+}
+
+.Reviews-title {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: Courier New, Courier, monospace;
+}
+
+.Reviews-img {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  display: block;
+  width: 22vh;
+  height: 4vh;
+}
+
+/* span font  */
+.Reviews-sf {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* grid font */
+.Reviews-pf {
+  font-size: 14px;
+  width: 16em;
+  margin: 0 auto;
+}

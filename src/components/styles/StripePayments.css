@@ -1,0 +1,63 @@
+/**
+* Shows how you can use CSS to style your Element's container.
+* These classes are added to your Stripe Element by default.
+* You can override these classNames by using the options passed
+* to the CardElement component.
+* https://stripe.com/docs/js/elements_object/create_element?type=card#elements_create-options-classes
+*/
+
+.FormGroup {
+  width: 30vw;
+  align-self: center;
+  box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.301),
+    0px 2px 5px 0px rgba(0, 0, 0, 0.103), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.288);
+  border-radius: 7px;
+  padding: 60px;
+}
+
+.FormRow {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 15px;
+  border-top: 1px solid rgba(214, 90, 90, 0.829);
+}
+
+.StripeElement {
+  height: 40px;
+  padding: 10px 12px;
+  width: 100%;
+  color: #32325d;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  box-shadow: 0 1px 3px 0 #c5c5c5;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.Stripe-Payment-Button:hover {
+  transition: 250ms;
+  transform: translateY(-2px) translateX(2px);
+}
+
+/* .spectrum-background {
+  background: linear-gradient(rgb(255, 65, 65), transparent),
+    linear-gradient(to top left, rgb(252, 80, 80), transparent),
+    linear-gradient(to top right, rgb(165, 165, 165), transparent);
+  background-blend-mode: screen;
+} */
