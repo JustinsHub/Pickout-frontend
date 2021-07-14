@@ -46,7 +46,7 @@ const Checkout = ({user, address}) => {
                                     {street_address === null ?
                                     <div>
                                     <div className="card-body">
-                                        <p style={{fontSize: "14px"}}>You current don't have a shipping address on your profile. Please <Link className="global-link" to="/profile/edit">update</Link> your address in order to continue checkout.</p>
+                                        <p style={{fontSize: "14px"}}>You currently don't have a shipping address on your profile. Please <Link className="global-link" to="/profile/edit">update</Link> your address in order to continue checkout.</p>
                                     </div>
                                 </div> 
                                 :
@@ -175,7 +175,7 @@ const Checkout = ({user, address}) => {
                                             </div>
                                         <div>
                                             {/* if someone tries to make an order either disable or modal your cart is empty */}
-                                            <button className="w-100 btn btn-default mt-3" style={{color: "white"}}><CheckoutModal/></button>
+                                            <div><CheckoutModal address={address} meal={signatureMeal}/></div>
                                         </div>
                                     </div>
                                 </div>

@@ -32,7 +32,7 @@ static async getUserId(id){
         const res = await axios.get(`${BASE_URL}/users/${id}`)
         return res
     }catch(e){
-        return e.response.data.error.message
+        return e.response.data
     }
 }
 
@@ -42,7 +42,7 @@ static async updateUser(id, editInfo){
     const res = await axios.patch(`${BASE_URL}/users/update/${id}`, editInfo) // object must be passed in for editInfo and match the API req.body
     return res
     }catch(e){
-        return e.response.data.error.message
+        return e.response.data
     }
 }
 
@@ -51,7 +51,7 @@ static async deleteUser(id){
     const res = await axios.delete(`${BASE_URL}/users/delete/${id}`)
     return res
     }catch(e){
-        return e.response.data.error.message
+        return e.response.data
     }
 }
 
@@ -60,7 +60,7 @@ static async getUserAddress(id) {
         const res = await axios.get(`${BASE_URL}/address/${id}`)
         return res
     }catch(e){
-        return e.response.data.error.message
+        return e.response.data
     }
 }
 
@@ -69,7 +69,7 @@ static async updateAddress(id, addressInfo){
         const res = await axios.patch(`${BASE_URL}/address/update/${id}`, addressInfo)
         return res
     }catch(e){
-        return e.response.data.error.message
+        return e.response.data
     }
 }
 

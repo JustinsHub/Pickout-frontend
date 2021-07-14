@@ -1,12 +1,24 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import {Modal} from 'react-bootstrap';
 import StripeContainer from './StripeContainer';
 
-const CheckoutModal = () => {
+const CheckoutModal = ({address, meal}) => { //change the disabled button based on address and meal = cart
     const history = useHistory()
     const [show, setShow] = useState(false);
     const [success, setSuccess] = useState(false)
+    const [ourAddress] = useState(address)
+    const [ourCheckout, setOurCheckout] = useState(false)
+
+
+    //Renders checkout buttons if there's an address and an item on the cart
+    useEffect(()=>{
+        const {street_address} = ourAddress.data
+        if(street_address){
+            if(meal)
+                setOurCheckout(true)
+        }
+    }, [ourAddress, meal])
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -23,13 +35,14 @@ const CheckoutModal = () => {
     //Questions sections
     //TESTS
     //Policy and Terms and conditions?
-    //launch Netlify
 
     return (
         <>
-    <span onClick={handleShow}>
-        Proceed to checkout
-    </span>
+        {ourCheckout && 
+        <button className="w-100 btn btn-default mt-3" style={{color: "white"}} onClick={handleShow}>
+            Proceed to checkout
+        </button>
+        }
 
     <Modal show={show} onHide={handleClose} backdrop="static">
         {/* set up conditional when successful payment this modal changed to go home. */}
