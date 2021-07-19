@@ -31,7 +31,6 @@ const CheckoutModal = ({address, meal}) => { //change the disabled button based 
         history.push('/')
     }
 
-    //Fix authorization (needs address) on checkout
     //Questions sections
     //TESTS
     //Policy and Terms and conditions?

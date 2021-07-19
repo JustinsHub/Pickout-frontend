@@ -38,14 +38,15 @@ const CheckoutForm = ({meal, pair, successfulPayment}) => {
       //if wine add wine method (how to get wine)
       if(!error){
         const {id} = paymentMethod
-        if(!ifPairMeal) { //document this
+        //If signature Meal is not paired just request signature meal payment
+        if(!ifPairMeal) {
           const signatureMealPayment = await Payment.signatureStripePayment(id)
           meal()//our POST method for purchases when purchasing signature-meal passed down by a prop
           setSuccess(true)
           return signatureMealPayment
         } else {
           const pairMealPayment = await Payment.pairStripePayment(id)
-          pair()
+          pair()//our POST method for purchases when purchasing pair-meal passed down by a prop
           setSuccess(true)
           return pairMealPayment
         }

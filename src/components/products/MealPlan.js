@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom'
 import '../styles/Price&Plans.css'
 import randomMeal from '../styles/images/randomMeal.jpeg'
 import useError from '../custom-hooks/useError'
+import QuestionSection from './QuestionSection'
 
 const MealPlan = ({user}) => {
     const history = useHistory()
@@ -39,9 +40,9 @@ const MealPlan = ({user}) => {
                 </div>
                 </div>
             </div>
-        <section className="PriceAndPlans-q">
-            Question section
-        </section>
+            <section className="PriceAndPlans-q">
+                <QuestionSection/>
+            </section>
         </section>
     )
 }
