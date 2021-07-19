@@ -20,6 +20,12 @@ const QuestionSection = () =>{
                         If you are close to a Pickout location, it will be there within 30 minutes. 
                     </p>
 
+                    <h5 className="PriceAndPlans-sub global-font fw-bold mt-5" style={{textAlign: "left"}}>How does Pickout choose the food for customers?</h5>
+                    <p className="global-font" style={{fontSize: '17px', textAlign: "left"}}>
+                        We have a huge database of different variety of foods all around the world that goes through our well built system by our engineers
+                        to have a perfectly random picked meal for you. 
+                    </p>
+
                 </div>
                 <div class="col-md-6">
                     <h5 className="PriceAndPlans-sub global-font fw-bold" style={{textAlign: "left"}}>Where does Pickout source ingredients?</h5>
@@ -29,11 +35,16 @@ const QuestionSection = () =>{
                         specialty ingredients.
                     </p>
 
-                    <h5 className="PriceAndPlans-sub global-font fw-bold" style={{textAlign: "left"}}>Is Pickout organic?</h5>
+                    <h5 className="PriceAndPlans-sub global-font fw-bold mt-5" style={{textAlign: "left"}}>Is Pickout organic?</h5>
                     <p className="global-font" style={{fontSize: '17px', textAlign: "left"}}>
                         We’re committed to sending high-quality ingredients in every delivery and support farmers who use sustainable 
                         farming practices. All of our ingredients are non-GMO, a requirement of organically certified foods. 
                         However, our recipes are not certified USDA organic.
+                    </p>
+
+                    <h5 className="PriceAndPlans-sub global-font fw-bold mt-5" style={{textAlign: "left"}}>What's the plan for the future for Pickout?</h5>
+                    <p className="global-font" style={{fontSize: '17px', textAlign: "left"}}>
+                        To have it all finished to turn in as the last project for Springboard Software Engineering Career Track.
                     </p>
                 </div>
             </div>
