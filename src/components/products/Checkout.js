@@ -98,10 +98,8 @@ const Checkout = ({user, address}) => {
                                     </div>
                                     <div>
                                         <img className="col-md-6 rounded" src={localPairMeal.wineImage} alt="signature-meal"></img>
-                                        <div>
-                                            {/* pop up modal if clicked make ask if they really want to remove it and have a description before */}
-                                            {/* create a modal component */}
-                                            <p><RemoveCartModal user={user} removeLocalWine={setRemoveLocalWine}/></p>
+                                        <div className="mt-2">
+                                            <div><RemoveCartModal user={user} removeLocalWine={setRemoveLocalWine}/></div>
                                         </div>
                                     </div>
                                 </div>

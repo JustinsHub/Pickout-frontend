@@ -15,12 +15,12 @@ import Policy from './products/Policy'
 import ErrorRedirect from './users/ErrorRedirect'
 import AccessError from './users/AccessError'
 
-
+//Routes hierarchy to paths
 const Routes = () => {
+    //important props passed down from AppContextWrapper component hierarchy
     const {login, register, currentUser, currentAddress} = useContext(AppContext)
     return (
         <div>
-            
             <Switch>
                 <Route exact path="/login">
                     <Login login={login} user={currentUser}/>

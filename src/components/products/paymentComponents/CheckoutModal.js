@@ -14,9 +14,8 @@ const CheckoutModal = ({address, meal}) => { //change the disabled button based 
     //Renders checkout buttons if there's an address and an item on the cart
     useEffect(()=>{
         const {street_address} = ourAddress.data
-        if(street_address){
-            if(meal)
-                setOurCheckout(true)
+        if(street_address && meal){
+            setOurCheckout(true)
         }
     }, [ourAddress, meal])
 
@@ -30,10 +29,6 @@ const CheckoutModal = ({address, meal}) => { //change the disabled button based 
         }
         history.push('/')
     }
-
-    //Questions sections
-    //TESTS
-    //Policy and Terms and conditions?
 
     return (
         <>
@@ -58,7 +53,7 @@ const CheckoutModal = ({address, meal}) => { //change the disabled button based 
         :
         <>
         <Modal.Body className="text-center">
-        <div class="alert alert-success" role="alert">
+        <div className="alert alert-success" role="alert">
             Successful Payment!
         </div>
         <div>

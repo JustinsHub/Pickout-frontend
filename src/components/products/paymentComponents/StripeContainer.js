@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
-import { PUBLIC_KEY } from '../../config';
 import AppContext from '../../AppContext'
 import CheckoutForm from './CheckoutForm';
 import Payment from './paymentApi';
 
+const PUBLIC_KEY = process.env.REACT_APP_STRIPE_PUBLIC_KEY
 const stripePromise = loadStripe(PUBLIC_KEY);
 
 //Get items from localStorage(cart) ready to parse to obtain the object stored(id)

@@ -3,10 +3,10 @@ import React from 'react'
 const QuestionSection = () =>{
     return (
     <>
-        <div class="container">
+        <div className="container">
             <h1 className="PriceAndPlans-t global-font">Frequently Asked Questions</h1>
-            <div class="row m-5">
-                <div class="col-md-6">
+            <div className="row m-5">
+                <div className="col-md-6">
                     <h5 className="PriceAndPlans-sub global-font fw-bold" style={{textAlign: "left"}}>How much is Pickout?</h5>
                     <p className="global-font" style={{fontSize: '17px', textAlign: "left"}}>
                         Pickout is has the best FIXED prices on the market no matter what random meal you get! Our signature meal 
@@ -27,7 +27,7 @@ const QuestionSection = () =>{
                     </p>
 
                 </div>
-                <div class="col-md-6">
+                <div className="col-md-6">
                     <h5 className="PriceAndPlans-sub global-font fw-bold" style={{textAlign: "left"}}>Where does Pickout source ingredients?</h5>
                     <p className="global-font" style={{fontSize: '17px', textAlign: "left"}}>
                         The quality and freshness of our ingredients are incredibly important to us, so we work directly with 

@@ -15,10 +15,11 @@ const RemoveCartModal = ({user, removeLocalWine}) => {
 
     return (
         <>
-    <p className="global-remove-cart" onClick={handleShow}>
-        Remove wine
-    </p>
-
+        <div>
+            <p className="global-remove-cart" onClick={handleShow}>
+                Remove wine
+            </p>
+        </div>
     <Modal show={show} onHide={handleClose}>
         <Modal.Header>
         </Modal.Header>

@@ -7,12 +7,6 @@ import './styles/navbar.css'
 const Navbar = () => {
     const {currentUser, logout} = useContext(AppContext) 
     const [navbar, setNavbar] = useState(false)
-    //Todo: 
-    //Find navbar/brand icon 
-    //api for our the website (payment) 
-    //cart? // prices of api items
-    //fake terms and conditions //already logged in... (register) //
-    //while on access/error have a random food joke request for entertainment?
 
     const avatarLogo = {
         loop: false,
@@ -23,11 +17,11 @@ const Navbar = () => {
         }
     };
 
+    //When page scrolls, navbar fades based on active CSS value
     const changeOnScroll = () => {
         window.scrollY >= 1 ? setNavbar(true) : setNavbar(false)
         }
     
-
     window.addEventListener('scroll', changeOnScroll)
 
     return (

@@ -9,6 +9,7 @@ const Home = () => {
         <main className="Home global-t-a col-md">
             <section className="Home-bg col-md">
                 <div className="container">
+                    {/* period here for UI correction */}
                     <p className="Home-spacing">.</p>
                         <div className="Home-title">
                             <p className="Home-ourTitle">Hungry?</p>
@@ -23,7 +24,6 @@ const Home = () => {
                 <Link className="btn btn-danger" to="/plans">Get Started!</Link>
                 </div>
             </section>
-                {/* Have the page scroll to buy or add to cart about pricing? */}
 
             <section className="mt-5">
                 <HowItWorks/>
