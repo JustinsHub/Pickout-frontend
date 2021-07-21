@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
 import Payment from './paymentApi'
 import '../../styles/StripePayments.css'
+import AppContext from '../../AppContext';
 
 //CSS prop add on for CardElement
 const CARD_OPTIONS = {
@@ -27,9 +28,17 @@ const CheckoutForm = ({meal, pair, successfulPayment}) => {
   const [success, setSuccess] = useState(false)
   const stripe = useStripe();
   const elements = useElements();
+
+  const {currentUser} = useContext(AppContext)
+  const {id: userId} = currentUser.data
+  
+  const ourLocalMeal = localStorage.getItem('signature-meal')
+  const ourWinePair = localStorage.getItem('pair-meal')
   
   const handleSubmit = async (e) => {
       e.preventDefault();
+      const mealId = JSON.parse(ourLocalMeal)
+      const pairId = JSON.parse(ourWinePair)
       const {error, paymentMethod} = await stripe.createPaymentMethod({
         type: "card",
         card: elements.getElement(CardElement)
@@ -41,12 +50,12 @@ const CheckoutForm = ({meal, pair, successfulPayment}) => {
         //If signature Meal is not paired just request signature meal payment
         if(!ifPairMeal) {
           const signatureMealPayment = await Payment.signatureStripePayment(id)
-          meal()//our POST method for purchases when purchasing signature-meal passed down by a prop
+          meal(userId, mealId.mealId)//our POST method for purchases when purchasing signature-meal passed down by a prop
           setSuccess(true)
           return signatureMealPayment
         } else {
           const pairMealPayment = await Payment.pairStripePayment(id)
-          pair()//our POST method for purchases when purchasing pair-meal passed down by a prop
+          pair(userId, mealId.mealId, pairId.wineId)//our POST method for purchases when purchasing pair-meal passed down by a prop
           setSuccess(true)
           return pairMealPayment
         }

@@ -16,17 +16,15 @@ const StripeContainer = ({success}) => {
     const {currentUser} = useContext(AppContext)
     const {id} = currentUser.data
 
-    const makeSignatureMealPurchase = async () => {
-        const mealId = JSON.parse(ourLocalMeal)
+    const makeSignatureMealPurchase = async (id, mealId) => {
         //plug in our parameters already so we just execute when we pass it down the prop for checkout
-        const res = await Payment.signatureMealPurchase(id, mealId.mealId)
+        const res = await Payment.signatureMealPurchase(id, mealId)
         return res
     }
 
-    const makePairMealPurchase = async () => {
-        const mealId = JSON.parse(ourLocalMeal)
-        const pairId = JSON.parse(ourWinePair)
-        const res = await Payment.pairMealPurchase(id, mealId.mealId, pairId.wineId)
+
+    const makePairMealPurchase = async (id, mealId, pairId) => {
+        const res = await Payment.pairMealPurchase(id, mealId, pairId)
         return res
     }
 

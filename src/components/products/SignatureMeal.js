@@ -35,7 +35,7 @@ const SignatureMeal = ({user}) => {
     const getRandomMeal = async() => {
         const res = await Products.getRandomMeal()
         const mealResults = await Products.getSignatureMeal()
-        const {id, price} = mealResults.data[0]
+        const {id, price} = (process.env.REACT_APP_BASE_URL) ? mealResults.data : mealResults.data[0] 
         const {image, title, summary} = res.data.recipes[0]
         setTimeout(() => {
             console.log(signatureMeal)
@@ -61,8 +61,8 @@ const SignatureMeal = ({user}) => {
         return randomWine
     }
     //adds requested API info to localStorage to be able to pass info to Checkout component
-    const addToCart = async () =>{ 
-        await setSignatureMeal(JSON.stringify({mealId, mealTitle, mealImage, mealPrice}))
+    const addToCart = () =>{ 
+        setSignatureMeal(JSON.stringify({mealId, mealTitle, mealImage, mealPrice}))
         setTimeout(()=> {
             history.push('/checkout')
         }, 500)

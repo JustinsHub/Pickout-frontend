@@ -26,7 +26,7 @@ const WineAddOn = ({wineRequest, clickNo, mealTitle, wineImage, addToCart}) => {
     const wineAddOn = async() => {
         const res = await wineRequest()
         const wineResults = await Products.getPairMeal()
-        const {id, price} = wineResults.data[0]
+        const {id, price} = (process.env.REACT_APP_BASE_URL) ? wineResults.data : wineResults.data[0] 
         const {description, title} = res
         console.log(localWineAddOn)
         setTimeout(()=> {
@@ -41,8 +41,8 @@ const WineAddOn = ({wineRequest, clickNo, mealTitle, wineImage, addToCart}) => {
     //this function only applies to this component only.
     //addToCart is a prop passed down from SignatureMeal (which only adds meal)
     //This function adds both meal and wine for pairing to localStorage to be in cart/checkout
-    const wineAddOnCheckout = async() =>{
-        await setLocalWineAddOn(JSON.stringify({wineId ,wineTitle, wineImage, winePrice}))
+    const wineAddOnCheckout = () =>{
+        setLocalWineAddOn(JSON.stringify({wineId ,wineTitle, wineImage, winePrice}))
         addToCart()
     }
 
